@@ -50,7 +50,7 @@ class Parser:
         return string.lower().replace(" ", "_")
 
     @staticmethod
-    def generate_queries(self, ttk_name: str) -> list:
+    def generate_queries(ttk_name: str) -> list:
         main_queries = [
             f"типовая технологическая карта {ttk_name}",
             f"ТТК {ttk_name}",
