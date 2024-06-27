@@ -10,23 +10,6 @@ class Parser:
     def __init__(self):
         self.links = []
 
-    def generate_queries(self, ttk_name: str) -> list:
-        main_queries = [
-            f"типовая технологическая карта {ttk_name}",
-            f"ТТК {ttk_name}",
-            f"{ttk_name} типовая технологическая карта",
-            f"{ttk_name} ТТК",
-        ]
-        extensions = ["pdf", "docx", "doc", "rtf"]
-        queries = []
-        for query in main_queries:
-            for filetype in extensions:
-                queries.append(f"{query} filetype:{filetype}")
-            queries.append(
-                f"{query} filetype:pdf OR filetype:docx OR filetype:doc OR filetype:rtf"
-            )
-        return queries
-
     def search_ttk(self, ttk_name: str) -> list:
         downloaded_links = []
         cnt = 0
@@ -65,6 +48,24 @@ class Parser:
     @staticmethod
     def convert_to_file_name(string: str) -> str:
         return string.lower().replace(" ", "_")
+
+    @staticmethod
+    def generate_queries(self, ttk_name: str) -> list:
+        main_queries = [
+            f"типовая технологическая карта {ttk_name}",
+            f"ТТК {ttk_name}",
+            f"{ttk_name} типовая технологическая карта",
+            f"{ttk_name} ТТК",
+        ]
+        extensions = ["pdf", "docx", "doc", "rtf"]
+        queries = []
+        for query in main_queries:
+            for filetype in extensions:
+                queries.append(f"{query} filetype:{filetype}")
+            queries.append(
+                f"{query} filetype:pdf OR filetype:docx OR filetype:doc OR filetype:rtf"
+            )
+        return queries
 
     @staticmethod
     def save_file(url: str, path: str) -> bool:
