@@ -10,7 +10,7 @@ class Parser:
     def __init__(self):
         self.links = []
 
-    def search_ttk(self, ttk_name: str) -> list:
+    def search_ttk(self, ttk_name: str) -> list[str]:
         downloaded_links = []
         cnt = 0
         queries = self.generate_queries(ttk_name)
@@ -50,7 +50,7 @@ class Parser:
         return string.lower().replace(" ", "_")
 
     @staticmethod
-    def generate_queries(ttk_name: str) -> list:
+    def generate_queries(ttk_name: str) -> list[str]:
         main_queries = [
             f"типовая технологическая карта {ttk_name}",
             f"ТТК {ttk_name}",
