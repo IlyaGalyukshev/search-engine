@@ -90,6 +90,6 @@ class Parser:
 
 data = pd.read_csv("smeta1_bad_works.csv")
 ttks = data["Activity Name"]
+parser = Parser()
 for ttk in ttks[:3]:
-    parser = Parser()
     files = parser.search_ttk(ttk)
