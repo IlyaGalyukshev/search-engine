@@ -36,7 +36,6 @@ class Parser:
             "https://www.bing.com/search?q=",
             "https://search.yahoo.com/search?p=",
             "https://duckduckgo.com/?q=",
-            "https://www.baidu.com/s?wd=",
             "https://yandex.com/search/?text=",
         ]
         for query in queries:
